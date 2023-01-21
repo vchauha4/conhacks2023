@@ -48,7 +48,7 @@ app.get('/categories', (req,res)=> {
         });
   })
   
-  app.get('/foods', (req,res)=> {
+app.get('/foods', (req,res)=> {
 
     db
       .collection("cpi")
@@ -61,7 +61,7 @@ app.get('/categories', (req,res)=> {
         });
   })
   
-  app.get('/:id', (req,res)=> {
+app.get('/:id', (req,res)=> {
         projection = {'_id':1}
         db
         .collection("cpi")
@@ -74,5 +74,37 @@ app.get('/categories', (req,res)=> {
             }
             });
   
-  })
+})
+app.get('/cpi/:id', (req,res)=> {
+    projection = {'December 2021 to December 2022':1, _id:0}
+    db
+    .collection("cpi")
+    .find({"Products and product groups 3 4":req.params.id},{projection})
+    .toArray(function (err, result) {
+        if (err) {
+            res.status(400).send("Error fetching listings!");
+        } else {
+            res.json(result);
+        }
+        });
+
+})
+
+app.get('/category/:id', (req,res)=> {
+    projection = {'Products and product groups 3 4':1, _id:0}
+    db
+    .collection("cpi")
+    .find({"category":req.params.id},{projection})
+    .toArray(function (err, result) {
+        if (err) {
+            res.status(400).send("Error fetching listings!");
+        } else {
+            res.json(result);
+        }
+        });
+
+})
+
+
+  
   
