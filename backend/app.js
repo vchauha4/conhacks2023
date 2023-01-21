@@ -61,4 +61,18 @@ app.get('/categories', (req,res)=> {
         });
   })
   
+  app.get('/:id', (req,res)=> {
+        projection = {'_id':1}
+        db
+        .collection("cpi")
+        .find({"Products and product groups 3 4":req.params.id},{projection})
+        .toArray(function (err, result) {
+            if (err) {
+                res.status(400).send("Error fetching listings!");
+            } else {
+                res.json(result);
+            }
+            });
+  
+  })
   
