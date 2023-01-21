@@ -35,3 +35,30 @@ app.get('/category', (req,res)=> {
       });
 })
 
+app.get('/categories', (req,res)=> {
+
+    db
+      .collection("cpi")
+      .distinct('category',function (err, result) {
+          if (err) {
+            res.status(400).send("Error fetching listings!");
+         } else {
+            res.json(result);
+          }
+        });
+  })
+  
+  app.get('/foods', (req,res)=> {
+
+    db
+      .collection("cpi")
+      .distinct('Products and product groups 3 4',function (err, result) {
+          if (err) {
+            res.status(400).send("Error fetching listings!");
+         } else {
+            res.json(result);
+          }
+        });
+  })
+  
+  
