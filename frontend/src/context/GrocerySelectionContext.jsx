@@ -7,6 +7,7 @@ export const useGrocerySelection = () => useContext(GrocerySelectionContext)
 const GrocerySelectionContext = React.createContext({
   loaded: [],  // list of loaded category
   selected: [],  // list of selected category
+  setLoaded: (items)=>{},
   addItemToSelected: (id)=>{},
   removeItemFromSelected: (id)=>{}
 })
