@@ -1,14 +1,20 @@
-import { Inter } from '@next/font/google'
 import { GrocerySelectionProvider } from '@/context/GrocerySelectionContext'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Autocomplete, Card } from '@mui/material'
+import {Grid} from '@mui/material'
+import Head from 'next/head'
+import EnterGroceryPage from './EnterGroceryPage'
 
 export default function Home() {
   return (
-    <GrocerySelectionProvider>
-      <div className='app-background'>
-        
-      </div>
-    </GrocerySelectionProvider>
+    <>
+      <Head>
+        <title>BudgetBuddy</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <GrocerySelectionProvider>
+        {/* <EnterGroceryPage /> */}
+        <Grid></Grid>
+      </GrocerySelectionProvider>
+    </>
   )
 }
