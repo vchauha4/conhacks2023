@@ -9,7 +9,7 @@ import AddItemsPage from './pages/AddItemsPage';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <>Hello world!</>,
+    element: <AddItemsPage />,
     children: [
       {
         path: "additems",
@@ -22,6 +22,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    
     <RouterProvider router={router} />
     {/* <App /> */}
   </React.StrictMode>
