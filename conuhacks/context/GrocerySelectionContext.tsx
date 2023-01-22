@@ -2,8 +2,8 @@ import React, { useState, useContext, ReactNode } from "react"
 
 // TYPE DEFINITION
 export type GroceryItem = {
-  id: number,
-  value: string,
+  id: string,
+  // value: string,
   quantity?: number,
   unit?: string
 }
@@ -16,7 +16,7 @@ export type GrocerySelectionContext = {
   loaded: GroceryItem[],  // list of loaded category
   selected: GroceryItem[],  // list of selected category
   addItemToSelected: (item: GroceryItem)=>void,
-  removeItemFromSelected: (id: number)=>void
+  removeItemFromSelected: (id: string)=>void
 }
 
 // HOOK
@@ -35,7 +35,7 @@ export const GrocerySelectionProvider = ({children}: GrocerySelectionProviderPro
     // TODO
     
   }
-  const removeItemFromSelected = (id: number) => {
+  const removeItemFromSelected = (id: string) => {
     // TODO
   }
 

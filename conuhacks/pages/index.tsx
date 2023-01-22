@@ -6,7 +6,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <GrocerySelectionProvider>
-      
+      <div className='app-background'>
+        
+      </div>
     </GrocerySelectionProvider>
   )
 }
