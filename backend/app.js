@@ -88,12 +88,15 @@ app.get('/cpi/:id', (req,res)=> {
         });
 
 })
-//returns all the foods for a given category
-app.get('/category/:id', (req,res)=> {
-    projection = {'Products and product groups 3 4':1, _id:0,'December 2021 to December 2022':1}
+
+
+
+//returns the category for a given food
+app.get('/findcategory/:id', (req,res)=> {
+    projection = {'category':1, _id:0}
     db
     .collection("cpi")
-    .find({"category":req.params.id},{projection})
+    .find({"Products and product groups 3 4":req.params.id},{projection})
     .toArray(function (err, result) {
         if (err) {
             res.status(400).send("Error fetching listings!");
@@ -104,13 +107,14 @@ app.get('/category/:id', (req,res)=> {
 
 })
 
-
-//returns all the foods for a given category
-app.get('/findcategory/:id', (req,res)=> {
-    projection = {'category':1, _id:0}
+//returns list of all foods in a given category 
+app.get('/category/:id', (req,res)=> {
+    projection = {'Products and product groups 3 4':1, _id:0,'December 2021 to December 2022':1}
+    filter = {'category':"meat"}
+    sort = {'December 2021 to December 2022':-1}
     db
     .collection("cpi")
-    .find({"Products and product groups 3 4":req.params.id},{projection})
+    .find({"category":req.params.id},{projection,sort})
     .toArray(function (err, result) {
         if (err) {
             res.status(400).send("Error fetching listings!");
