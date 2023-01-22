@@ -38,7 +38,7 @@ function App() {
           Budget Bucket
         </Typography>
       </header>
-      <Grid  sx={{height:"90vh", backgroundColor:"#d5d1d1", display:"grid", placeItems:"center" }}>
+      <Grid  sx={{height:"120vh", backgroundColor:"#d5d1d1", display:"grid", placeItems:"center" }}>
 
         <Card sx={{width:"50%", height:"100%", backgroundColor:"white", display:"flex", marginTop:"0%",display:"flex", marginBotom:"2%", flexDirection:"column"}}>
         
@@ -47,7 +47,7 @@ function App() {
         
           {/*HERE <AddItemsPage></AddItemsPage> */}
           <Grid sx={{width:"100%"}}>
-      <h3>Add your grocery to the list</h3>
+      <h3 sx={{backgroundColor:"#bde7bd"}}>Add your grocery to the list</h3>
       <Autocomplete 
         options={demo}
         label={'Items'}
