@@ -18,8 +18,14 @@ export const GrocerySelectionProvider = (props) => {
   const [loaded, setLoaded] = useState([])
 
   const addItemToSelected = (id) => {
-    // TODO
-    
+    // setSelected(currItems => {
+    //   if (currItems.find(item => item.id === id) == null) {
+    //     return [...currItems, { id }]
+    //   }
+    // }
+    // setSelected(currItems => {
+    //   if(currItems.find(id))
+    // })
   }
   const removeItemFromSelected = (id) => {
     // TODO
