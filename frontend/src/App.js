@@ -12,8 +12,11 @@ function App() {
       <Grid  sx={{height:"90vh", backgroundColor:"#d5d1d1", display:"grid", placeItems:"center" }}>
 
         <Card sx={{width:"50%", height:"100%", backgroundColor:"white", display:"flex", marginTop:"0%", marginBotom:"2%"}}>
-
         </Card>
+        <GrocerySelectionProvider>
+        {<EnterGroceryPage />}
+        <Grid></Grid>
+      </GrocerySelectionProvider>
 
       </Grid>
     </div>
