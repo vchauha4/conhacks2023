@@ -25,7 +25,7 @@ export default function AddItemsPage() {
     .catch(err => console.error('error:' + err));
 
   return (
-    <React.Fragment>
+    <Grid sx={{width:"100%"}}>
       <h3>Add your grocery to the list</h3>
       {
         data == [] ? <></> :
@@ -42,7 +42,6 @@ export default function AddItemsPage() {
         {/* <ControlPointIcon fontSize='128' color="disabled" /> */}
       </div>
       
-
-    </React.Fragment>
+    </Grid>
   )
 }

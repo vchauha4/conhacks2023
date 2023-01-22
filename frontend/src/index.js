@@ -5,11 +5,12 @@ import reportWebVitals from './reportWebVitals';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AddItemsPage from './pages/AddItemsPage';
+import App from './App';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AddItemsPage />,
+    element: <App />,
     children: [
       {
         path: "additems",
