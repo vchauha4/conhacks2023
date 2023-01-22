@@ -11,23 +11,37 @@ import { ListItemButton } from '@mui/material';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import {IconButton} from '@mui/material';
 import ReorderIcon from '@mui/icons-material/Reorder';
-export default function GroceryList() {
-  return (
+export default function GroceryList({itemList}) {
+  var listNew=String(itemList)
+
+  var itemValues=listNew.split('-')
+
+  var value2=['Banada','23Banada']
+
+  return (  
+
+    
     <List sx={{borderColor:"black", borderRadius: 'sm',
     maxWidth: "100%",
     boxShadow: 'sm',
     bgcolor: 'background.body',
     justifyItems:"center"}}>
-            <ListItem>
-            <ListItemDecorator>
-                  <ReorderIcon />
-                </ListItemDecorator>
-              <ListItemButton>
-                 Chicken
-              </ListItemButton>
-            </ListItem>
+
+{(Array.from(Array(itemValues.length-1).keys())).map((value)=>(
+      <ListItem>
+      <ListItemDecorator>
+            <ReorderIcon />
+          </ListItemDecorator>
+        <ListItemButton>
+           {itemValues[value]}
+        </ListItemButton>
+      </ListItem>
+    ))}
+
+
             
-            <ListItem>
+            
+            {/* <ListItem>
             <ListItemDecorator>
                   <ReorderIcon />
             </ListItemDecorator>
@@ -38,7 +52,10 @@ export default function GroceryList() {
                   <ReorderIcon />
             </ListItemDecorator>
               <ListItemButton> Pork Loin Chop</ListItemButton>
-            </ListItem>
+            </ListItem> */}
+
+
+
           </List>
   );
 }
