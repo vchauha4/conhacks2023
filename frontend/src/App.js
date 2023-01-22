@@ -2,6 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import { Grid, Typography, Card} from '@mui/material';
 import AddItemsPage from './pages/AddItemsPage';
+import GroceryList from './context/GroceryList.tsx';
+import { display } from '@mui/system';
+import {BudgetScore} from './context/BudgetScore';
+import SemiCircleProgressBar from "react-progressbar-semicircle";
+
 function App() {
   return (
     <div className="App">
@@ -12,9 +17,13 @@ function App() {
       </header>
       <Grid  sx={{height:"90vh", backgroundColor:"#d5d1d1", display:"grid", placeItems:"center" }}>
 
-        <Card sx={{width:"50%", height:"100%", backgroundColor:"white", display:"flex", marginTop:"0%", marginBotom:"2%", flexDirection:"column"}}>
+        <Card sx={{width:"50%", height:"100%", backgroundColor:"white", display:"flex", marginTop:"0%",display:"flex", marginBotom:"2%", flexDirection:"column"}}>
           <AddItemsPage></AddItemsPage>
           <Typography sx={{marginTop:"20%", alignItems:"left", justifyContent:"left"}}>Grocery List</Typography>
+          <GroceryList sx={{width:"100%", marginLecft:"10%"}}></GroceryList>
+          <Typography >Budget Score</Typography>
+          <SemiCircleProgressBar percentage={33} showPercentValue />
+
         </Card>
         
         
