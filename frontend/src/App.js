@@ -13,10 +13,7 @@ function App() {
 
         <Card sx={{width:"50%", height:"100%", backgroundColor:"white", display:"flex", marginTop:"0%", marginBotom:"2%"}}>
         </Card>
-        <GrocerySelectionProvider>
-        {<EnterGroceryPage />}
-        <Grid></Grid>
-      </GrocerySelectionProvider>
+        
 
       </Grid>
     </div>
