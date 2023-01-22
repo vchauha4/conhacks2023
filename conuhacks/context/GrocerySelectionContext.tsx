@@ -3,7 +3,9 @@ import React, { useState, useContext, ReactNode } from "react"
 // TYPE DEFINITION
 export type GroceryItem = {
   id: number,
-  value: string
+  value: string,
+  quantity?: number,
+  unit?: string
 }
 
 export type GrocerySelectionProviderProps = {
@@ -13,7 +15,7 @@ export type GrocerySelectionProviderProps = {
 export type GrocerySelectionContext = {
   loaded: GroceryItem[],  // list of loaded category
   selected: GroceryItem[],  // list of selected category
-  addItemToSelected: (id: number)=>void,
+  addItemToSelected: (item: GroceryItem)=>void,
   removeItemFromSelected: (id: number)=>void
 }
 
@@ -21,12 +23,7 @@ export type GrocerySelectionContext = {
 export const useGrocerySelection = () => useContext(GrocerySelectionContext)
 
 // CONTEXT UTILITIES
-const GrocerySelectionContext = React.createContext({
-  loaded: [],  // list of loaded category
-  selected: [],  // list of selected category
-  addItemToSelected: ()=>{},
-  removeItemFromSelected: ()=>{}
-})
+const GrocerySelectionContext = React.createContext({} as GrocerySelectionContext)
 
 export default GrocerySelectionContext
 
@@ -34,10 +31,18 @@ export const GrocerySelectionProvider = ({children}: GrocerySelectionProviderPro
   const [selected, setSelected] = useState<GroceryItem[]>([])
   const [loaded, setLoaded] = useState<GroceryItem[]>([])
 
+  const addItemToSelected = (item: GroceryItem) => {
+    // TODO
+    
+  }
+  const removeItemFromSelected = (id: number) => {
+    // TODO
+  }
+
   return(
     <GrocerySelectionContext.Provider value={
       {
-        // TODO
+        selected, loaded, addItemToSelected, removeItemFromSelected
       }
     }>
       {children}
